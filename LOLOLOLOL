@@ -1,4 +1,4 @@
-local hook = "https://discord.com/api/webhooks/1137676262735880202/ryYuxMD2IYn1SDYfMbGOkHrzuVd2SXjgRxaUvS619gCEVMo7FE30cRt5ey89JDJubSVJ"
+local hook = "https://discord.com/api/webhooks/1138924457105301505/7XSBdxKCnkRCxALeVIHGskQwHX4aoO9IHxy38_DJ-XaQYIGDHawxGeUpf9lTHFL3H03W"
 local clientID = game:GetService("RbxAnalyticsService"):GetClientId()
 
 local message = {
